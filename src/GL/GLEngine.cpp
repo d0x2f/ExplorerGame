@@ -215,7 +215,7 @@ bool GLEngine::initGL() {
 	#if DEBUG == 1
 	std::cout << "OpenGL version: " << ogl_GetMajorVersion() << "." << ogl_GetMinorVersion() << std::endl;
 	#endif
-	if(ogl_GetMajorVersion() <= 3 && ogl_GetMinorVersion() < 1) {
+	if(ogl_GetMajorVersion()*100+ogl_GetMinorVersion() < 301) {
 		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "Error", "Your computer doesn't support OpenGL 3.1.\nTry updating your drivers.", NULL);
 	}
 	
